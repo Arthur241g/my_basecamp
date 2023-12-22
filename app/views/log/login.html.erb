@@ -1,0 +1,22 @@
+<div class="mx-auto p-2 mt-3 text-center" style="width: 600px;">
+	<div class="text-center">
+		<img src="https://flyclipart.com/thumbs/basecamp-app-1489049.png" alt="" class="rounded" style="width: 300px;">
+		<h1 class="mb-5">Login here</h1>
+	</div>
+	<div class="mb-5">
+		<form>
+		  <div class="mb-3">
+		    <label for="exampleInputEmail1" class="form-label">Email</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+		  </div>
+		  <div class="">
+		    <label for="exampleInputPassword1" class="form-label">Password</label>
+		    <input type="password" class="form-control" id="exampleInputPassword1" required>
+		  </div>
+		  <button type="submit" class="btn btn-primary mt-5">Login</button>
+		  <div>
+		  	<span>You haven't an account ? <%= link_to 'Sign_up', log_signup_path, class: "text-primary" %></span>
+		  </div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<%= form_with(model: project, class: "contents") do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation" class="bg-danger text-danger px-3 py-2 rounded-lg mt-3">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="mb-5">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control mt-2" %>
+    </div>
+
+    <div class="mb-5">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-control mt-2" %>
+    </div>
+
+    <div class="text-center">
+      <%= form.submit class: "btn btn-primary mt-5 cursor-pointer" %>
+    </div>
+<% end %>

@@ -1,0 +1,30 @@
+<%= form_with(model: [@discussion, @message], local: true) do |form| %>
+  <% if message.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+        <% message.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div>
+    <%= form.hidden_field :discussion_id, value: params[:discussion_id] %>
+  </div>
+
+  <div>
+    <%= form.label :contenu, style: "display: block" %>
+    <%= form.text_area :contenu %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

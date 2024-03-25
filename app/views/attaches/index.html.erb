@@ -1,0 +1,18 @@
+<h1>Attachments</h1>
+
+<div id="attaches">
+  <% @attaches.each do |attach| %>
+    <%= render attach %>
+    <p>
+      <% attach.images.each do |image| %>
+        <%= image_tag image.variant(resize_to_limit: [100, 100]) %>
+      <% end %>
+
+
+
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New attachments", new_attach_path, class: "me-4" %>
+<%= link_to "Back to options", discussions_path%>

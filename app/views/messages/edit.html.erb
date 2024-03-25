@@ -1,0 +1,10 @@
+<h1>Editing message</h1>
+
+<%= render "form", message: @message %>
+
+<br>
+
+<div>
+  <%= link_to "Show this message", edit_discussion_message_path(@discussion, @message) %> |
+  <%= link_to "Back to messages", discussion_messages_path(@discussion) %>
+</div>

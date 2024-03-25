@@ -1,0 +1,8 @@
+<%= render @attach %>
+
+<div>
+  <%= link_to "Edit this attachment", edit_attach_path(@attach) %> |
+  <%= link_to "Back to attachments", attaches_path %>
+
+  <%= button_to "Destroy this attachment", @attach, method: :delete %>
+</div>

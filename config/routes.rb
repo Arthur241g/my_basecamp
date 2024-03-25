@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
+  resources :truetasks
+  
+  resources :attaches
 
-  devise_for :users
+  resources :old2_attachments
+  
+  resources :discussions do
+    resources :messages
+  end
+
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
   resources :projects
+
+  resources :use
 
   get 'log/login'
 

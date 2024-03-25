@@ -1,0 +1,21 @@
+<%= form_with(model: attach) do |form| %>
+  <% if attach.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(attach.errors.count, "error") %> prohibited this attach from being saved:</h2>
+
+      <ul>
+        <% attach.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= form.label :choose_a_file, style: "display: block" %></h5>
+    <p class="card-text"><%= form.file_field :images, multiple: true %></p>
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>

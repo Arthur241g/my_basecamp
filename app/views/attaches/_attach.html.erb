@@ -1,0 +1,14 @@
+<div id="<%= dom_id attach %>">
+  <p>
+    <strong>File:</strong>
+    <%= attach.file %>
+  </p>
+
+</div>
+
+<%
+=begin %>
+<%= image_tag attach.fichier.url(:medium) %>
+    <%= link_to "Supprimer", project_attachement_path(@project, attachement), method: :delete %>
+<%
+=end %>

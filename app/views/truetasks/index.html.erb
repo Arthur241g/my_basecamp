@@ -1,0 +1,13 @@
+<h1>Tasks</h1>
+
+<div id="truetasks">
+  <% @truetasks.each do |truetask| %>
+    <%= render truetask %>
+    <p>
+      <%= link_to "Show this task", truetask %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "create New task", new_truetask_path, class: "me-4"%>
+<%= link_to "back to options", discussions_path %>

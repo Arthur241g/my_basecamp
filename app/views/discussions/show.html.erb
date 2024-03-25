@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= @discussion.nom %></h5>
+    <p class="card-text"></p>
+    <div class="flex">
+      <%= link_to "Edit this discussion", edit_discussion_path(@discussion) %>
+      <%= link_to "Back to discussion", discussions_path , class: "mb-1"%>
+      <%= button_to "Destroy this discussion", @discussion, method: :delete, class: "bg-danger" %>
+    </div>
+  </div>
+</div>

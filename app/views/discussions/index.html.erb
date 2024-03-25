@@ -1,0 +1,52 @@
+<div class="text-center mb-5 mt-2">
+  <h1 class="mb-3">Add all your advanced edittings here</h1>
+  <p> Created by: <span class="text-danger"><%=current_user.email%></span></p>
+</div>
+
+<div class="flex mt-3">
+  <h2 class="fs-5">Members:</h2>
+  <p class="mt-2">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+      <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+    </svg>
+    <%=current_user.email%>
+  </p>
+</div>
+<br>
+
+<div class="my-3">
+  <% if current_user.has_role? :admin %>
+    <p><%= link_to 'Add new discussion', new_discussion_path %></p>
+  <% end %>
+  <div class="d-flex justify-content-between">
+    <%= render @discussions %>
+  </div>
+</div>
+<hr>
+<div class="my-3">
+  <p> <%= link_to 'Add new task', new_truetask_path %></p>
+  <%= link_to 'all tasks', truetasks_path %>
+</div>
+<hr>
+<div class="my-3">
+  <p> <%= link_to 'Add attachments', new_attach_path %></p>
+</div>
+
+<div class= "position-absolute end-0 me-3 mt-4 p-2">
+  <div>
+    <%= link_to "Return" , projects_path, class: "text-warning"%>
+  </div>
+</div>
+
+<!--
+<div id="discussions">
+  <% @discussions.each do |discussion| %>
+    <%= render discussion %>
+    <p>
+      <%= link_to "Show this discussion", discussion %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New discussion", new_discussion_path %>
+-->

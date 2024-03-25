@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ .done {
+    color: green;
+  }
+  
+  .not-done {
+    color: red;
+  }
+  

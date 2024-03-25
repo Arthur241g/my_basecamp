@@ -44,6 +44,9 @@ gem "bootsnap", require: false
 #Gem devise for to start with my authentification_system
 gem 'devise', '~> 4.9', '>= 4.9.3'
 
+#Gem rolify for manage Role_permission
+gem 'rolify'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -68,3 +71,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'activestorage', '~> 7.1', '>= 7.1.3.2'
+
+gem 'image_processing', '~> 1.2'

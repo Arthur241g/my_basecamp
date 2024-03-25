@@ -1,0 +1,26 @@
+<%= form_with(model: truetask) do |form| %>
+  <% if truetask.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(truetask.errors.count, "error") %> prohibited this truetask from being saved:</h2>
+
+      <ul>
+        <% truetask.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="card text-center">
+    <div class="card-header">
+      Add new tak
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= form.label :name, style: "display: block" %></h5>
+      <p class="card-text"><%= form.text_field :name %></p>
+      <h6 class="card-title"><%= form.label :description, style: "display: block" %></h6>
+      <p class="card-text"><%= form.text_field :description %></p>
+      <p class="card-text"><%= form.check_box :done%> <%= form.label :Task_done_?%></p>
+      <%= form.submit%>
+    </div>
+  </div>
+<% end %>

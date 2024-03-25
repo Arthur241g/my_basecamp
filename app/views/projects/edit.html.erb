@@ -1,10 +1,16 @@
-<h1>Editing project</h1>
+<div class="d-flex flex-row mb-3">
+  <h1>Editing project</h1>
+</div>
+<div class="d-flex flex-row-reverse">
+  <%= link_to "More options", discussions_path %>
+</div>
+
 
 <%= render "form", project: @project %>
 
 <br>
 
-<div>
+<div class="text-center">
   <%= link_to "Show this project", @project %> |
   <%= link_to "Back to projects", projects_path %>
 </div>

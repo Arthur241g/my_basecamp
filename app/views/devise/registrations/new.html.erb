@@ -1,61 +1,38 @@
 <div class="mx-auto p-2 mt-5 text-center" style="width: 600px;">
-	<div class="text-center">
-		<img src="https://flyclipart.com/thumbs/basecamp-app-1489049.png" alt="" class="rounded" style="width: 300px;">
-		<h1 class="mb-5">Sign up</h1>
-	</div>
-	<div>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="mb-5">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mt-2" %>
+  <div class="text-center">
+    <img src="https://flyclipart.com/thumbs/basecamp-app-1489049.png" alt="" class="rounded" style="width: 300px;">
+    <h1 class="mb-5">Sign up</h1>
   </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="mb-5">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control mt-2" %>
-  </div>
+    <div class="mb-5">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mt-2" %>
+    </div>
 
-  <div class="mb-5">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control mt-2" %>
-  </div>
+    <div class="mb-5">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control mt-2" %>
+    </div>
 
-  <div class="actions mb-1">
-    <%= f.submit "Sign up", class: "btn btn-primary cursor-pointer"%>
-  </div>
-<% end %>
+    <div class="mb-5">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control mt-2" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="mb-5">
+      <%= f.label :role_name %><br />
+      <%= f.select :role_name, Role.all.map { |r| [r.name, r.name] }, { include_blank: 'Sélectionnez votre rôle' }, { class: "form-control mt-2" } %>
+    </div>
 
-	<!--	<form>
-		    <div class="mb-3">
-		    	<label for="exampleInputName1" class="form-label">Name</label>
-		    	<input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp" required>
-		    </div>
-		    <div class="mb-3">
-		    	<label for="exampleInputEmail1" class="form-label">Email</label>
-		    	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-		    	<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-		    </div>
-		    <div class="mb-3">
-		    	<label for="exampleInputPassword1" class="form-label">Password</label>
-		    	<input type="password" class="form-control" id="exampleInputPassword1" required>
-		    </div>
-		    <div class="mb-3">
-		    	<label for="exampleInputConfirmPassword1" class="form-label">Confirm Password</label>
-		    	<input type="password" class="form-control" id="exampleInputConfirmPassword1">
-		    </div>
-		    <button type="submit" >Sign_up</button>
-		  	<div>
-		  		<span>You have an account ? <%= link_to 'login', log_login_path, class: "text-primary" %></span>
-		    </div>
-		</form>
-	</div>
+    <div class="actions mb-1">
+      <%= f.submit "Sign up", class: "btn btn-primary cursor-pointer" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
 </div>
--->

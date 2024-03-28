@@ -18,7 +18,7 @@ module Basecamp
 
     config.active_storage.variant_processor = :vips # ou :mini_magick
 
-    Rails.application.config.hosts << ".com"
+    config.hosts << "projbasecamp-xx9x6y56.b4a.run"
 
 
     # Configuration for the application, engines, and railties goes here.

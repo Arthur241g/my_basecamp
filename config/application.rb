@@ -19,6 +19,7 @@ module Basecamp
     config.active_storage.variant_processor = :vips # ou :mini_magick
 
     config.hosts << "projbasecamp-xx9x6y56.b4a.run"
+    config.hosts << "mysite-1oi2.onrender.com"
 
 
     # Configuration for the application, engines, and railties goes here.

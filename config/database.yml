@@ -26,4 +26,5 @@ test:
 
 production:
   <<: *default
+  darabase: basecamp
   url: <%= ENV['DATABASE_URL'] %>

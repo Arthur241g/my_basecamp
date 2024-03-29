@@ -20,7 +20,7 @@ module Basecamp
 
     config.hosts << "projbasecamp-xx9x6y56.b4a.run"
     config.hosts << "mysite-1oi2.onrender.com"
-    config.hosts << "localhost:10000"
+    config.hosts << "./localhost"
 
 
     # Configuration for the application, engines, and railties goes here.
